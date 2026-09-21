@@ -1,0 +1,17 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${APP_PORT:-3000}:3000"
+    environment:
+      DATABASE_URL: file:/data/dev.db
+      AUTH_SECRET: ${AUTH_SECRET:?Set AUTH_SECRET in .env — see .env.docker.example}
+      AUTH_TRUST_HOST: ${AUTH_TRUST_HOST:-true}
+    volumes:
+      - gasvision_data:/data
+    restart: unless-stopped
+
+volumes:
+  gasvision_data:

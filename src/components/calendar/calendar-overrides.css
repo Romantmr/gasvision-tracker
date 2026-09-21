@@ -1,0 +1,150 @@
+/* Reskins react-big-calendar's default look to match the app's design
+   system. Scoped under .gv-calendar so it only touches this view. */
+
+.gv-calendar.rbc-calendar {
+  font-family: var(--font-sans);
+  color: var(--foreground);
+}
+
+.gv-calendar .rbc-month-view,
+.gv-calendar .rbc-time-view,
+.gv-calendar .rbc-agenda-view {
+  border: none;
+}
+
+.gv-calendar .rbc-month-row + .rbc-month-row,
+.gv-calendar .rbc-day-bg + .rbc-day-bg,
+.gv-calendar .rbc-header + .rbc-header {
+  border-color: var(--border);
+}
+
+.gv-calendar .rbc-header {
+  padding: 8px 4px;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted-foreground);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.gv-calendar .rbc-month-row {
+  border-color: var(--border);
+}
+
+.gv-calendar .rbc-day-bg {
+  transition: background-color 120ms ease;
+}
+
+.gv-calendar .rbc-day-bg:hover {
+  background-color: var(--muted);
+}
+
+.gv-calendar .rbc-off-range-bg {
+  background-color: color-mix(in oklch, var(--muted) 55%, transparent);
+}
+
+.gv-calendar .rbc-off-range {
+  color: color-mix(in oklch, var(--muted-foreground) 60%, transparent);
+}
+
+.gv-calendar .rbc-today {
+  background-color: color-mix(in oklch, var(--primary) 8%, var(--card));
+}
+
+.gv-calendar .rbc-date-cell {
+  padding: 6px 8px 0 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.gv-calendar .rbc-date-cell.rbc-now {
+  font-weight: 700;
+}
+
+.gv-calendar .rbc-date-cell.rbc-now > a,
+.gv-calendar .rbc-date-cell.rbc-now > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.gv-calendar .rbc-event {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin-bottom: 2px;
+}
+
+.gv-calendar .rbc-event.rbc-selected {
+  background-color: transparent;
+}
+
+.gv-calendar .rbc-event:focus {
+  outline: none;
+}
+
+.gv-calendar .rbc-event-content {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: var(--gv-event-bg, var(--accent));
+  color: var(--gv-event-fg, var(--accent-foreground));
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gv-calendar .rbc-event-content::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  flex: none;
+  background-color: var(--gv-event-fg, var(--accent-foreground));
+}
+
+.gv-calendar .rbc-row-segment {
+  padding: 0 2px;
+}
+
+.gv-calendar .rbc-show-more {
+  background: transparent;
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0 6px;
+}
+
+.gv-calendar .rbc-agenda-view table.rbc-agenda-table {
+  border: none;
+}
+
+.gv-calendar .rbc-agenda-view table.rbc-agenda-table thead > tr > th {
+  border-bottom: 1px solid var(--border);
+  color: var(--muted-foreground);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 8px;
+}
+
+.gv-calendar .rbc-agenda-view table.rbc-agenda-table tbody > tr > td {
+  border-color: var(--border);
+  padding: 8px;
+}
+
+.gv-calendar .rbc-agenda-empty {
+  color: var(--muted-foreground);
+}

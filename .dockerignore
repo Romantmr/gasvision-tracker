@@ -1,0 +1,31 @@
+node_modules
+.next
+out
+build
+
+.git
+.gitignore
+
+# local env / secrets — pass real values via docker-compose / --env-file
+.env
+.env.*
+!.env.docker.example
+
+# local SQLite database — persisted via a named volume instead
+dev.db
+dev.db-journal
+
+# Prisma-generated client is rebuilt inside the image
+src/generated
+
+npm-debug.log*
+*.log
+.DS_Store
+
+# editor / assistant metadata, not needed inside the image
+.vscode
+.idea
+.claude
+.agents
+.windsurf
+skills-lock.json
